@@ -1,0 +1,106 @@
+{
+  "users": [
+    {
+      "name": "hieu",
+      "email": "trunghieu@gmail.com",
+      "password": "1111",
+      "id": 1
+    },
+    {
+      "name": "trunghieu",
+      "email": "hieu@gmail.com",
+      "password": "121212",
+      "id": 2
+    }
+  ],
+  "todos": [
+    {
+      "id": 1,
+      "title": "thử lần 1",
+      "description": "thử lần 1",
+      "status": true,
+      "priority": "low",
+      "userId": 1
+    },
+    {
+      "id": 2,
+      "title": "thử lần 1",
+      "description": "thử lần 1",
+      "status": true,
+      "priority": "low",
+      "userId": 1
+    },
+    {
+      "id": 3,
+      "title": "thử lần 1",
+      "description": "thử lần 1",
+      "status": true,
+      "priority": "low",
+      "userId": 2
+    },
+    {
+      "userId": 2,
+      "status": false,
+      "title": "gdgdfg",
+      "description": "dfgdfgdf",
+      "priority": "low",
+      "id": 5
+    },
+    {
+      "userId": 2,
+      "status": false,
+      "title": "fdsfsdf",
+      "description": "sdfsdfsdf",
+      "priority": "low",
+      "id": 6
+    },
+    {
+      "userId": 2,
+      "status": false,
+      "title": "fsdfs",
+      "description": "fsdfsdf",
+      "priority": "low",
+      "id": 7
+    },
+    {
+      "userId": 2,
+      "status": false,
+      "title": "đáfdsfdsf",
+      "description": "đáfdsfdsf",
+      "priority": "low",
+      "id": 10
+    },
+    {
+      "userId": 2,
+      "status": false,
+      "title": "asdasd",
+      "description": "fdsfsdf",
+      "priority": "low",
+      "id": 13
+    },
+    {
+      "userId": 2,
+      "status": false,
+      "title": "fgdfg",
+      "description": "dfgdfgdfg",
+      "priority": "low",
+      "id": 14
+    },
+    {
+      "userId": 2,
+      "status": false,
+      "title": "fdsfsd",
+      "description": "sdfsdfsdf",
+      "priority": "medium",
+      "id": 15
+    },
+    {
+      "userId": 2,
+      "status": false,
+      "title": "sfgfgdfg",
+      "description": "dfgdfgdfg",
+      "priority": "high",
+      "id": 16
+    }
+  ]
+}
