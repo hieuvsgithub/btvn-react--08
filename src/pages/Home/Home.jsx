@@ -16,7 +16,7 @@ const Home = () => {
       const todosUser = todos.filter((item) => item.userId === idUser);
       setData(todosUser);
     })();
-  }, [data]);
+  }, []);
 
   return (
     <>

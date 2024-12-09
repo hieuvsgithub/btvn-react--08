@@ -9,7 +9,7 @@ const TodoItem = (data, updateData, datas) => {
       try {
         const res = await removeById("/todos", id);
         if (res.status === 200) {
-          updateData(datas.filter((data) => data.id !== data.id));
+          // updateData(datas.filter((data) => data.id !== data.id));
         }
       } catch (error) {
         console.log(error);
