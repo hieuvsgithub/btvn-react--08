@@ -42,15 +42,25 @@ const TodoItem = ({ data, updateData, datas, status, setStatus }) => {
       <td>{data.priority}</td>
       <td>
         <button
-          className="border-2"
+          className="border-2 border-amber-500 ml-3"
           onClick={() => handleChangeStatus(data.id)}
         >
           {data.status ? "Done" : "Doing"}
         </button>
       </td>
       <td>
-        <button onClick={() => deleteTodo(data.id)}>delete</button>
-        <Link to={`/action_todo/update/${data.id}`}>update</Link>
+        <button
+          className="border-2 border-amber-500 ml-3"
+          onClick={() => deleteTodo(data.id)}
+        >
+          delete
+        </button>
+        <Link
+          className="border-2 border-amber-500 ml-3"
+          to={`/action_todo/update/${data.id}`}
+        >
+          update
+        </Link>
       </td>
     </tr>
   );
