@@ -1,17 +1,19 @@
-// import React from 'react'
-
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm } from "react-hook-form";
 import { createNew, getById, updateById } from "../../services/productService";
 import { schemaAddTodo } from "../../schemas/addTodoSchema";
 import { useNavigate, useParams } from "react-router-dom";
 import { useEffect, useState } from "react";
+import { useContext } from "react";
+import { TodoContext } from "../../contexts/TodosContext";
 
-const ActionTodo = (setData) => {
+const ActionTodo = () => {
   const { id } = useParams();
   const [todoOld, setTodoOld] = useState();
   const nav = useNavigate();
   const idUser = +localStorage.getItem("IdUser");
+  const { todos, setTodos } = useContext(TodoContext);
+
   const {
     register,
     reset,
@@ -27,6 +29,7 @@ const ActionTodo = (setData) => {
         try {
           const todo = await getById("/todos", id);
           setTodoOld(todo);
+          reset(todo);
         } catch (error) {
           console.error(error);
         }
@@ -39,14 +42,15 @@ const ActionTodo = (setData) => {
     const checkUser = async () => {
       if (id) {
         const todoUpdate = await updateById("/todos", id, data);
+        nav("/");
       } else {
-        const todo = await { userId: idUser, status: false, ...data };
+        const todo = { userId: idUser, status: false, ...data };
 
         const authAddTodo = confirm(`Thêm Todo ${todo.title}`);
         if (authAddTodo) {
           const todoNew = await createNew("/todos", todo);
           nav("/");
-          setData();
+
           reset();
         }
       }
@@ -62,7 +66,7 @@ const ActionTodo = (setData) => {
         className="w-1/2 flex-col px-5 py-10 mx-auto mt-16 border-solid border-2 border-slate-700 rounded-md"
       >
         <h2 className="text-center text-2xl font-semibold mb-8">
-          Thêm sản phẩm mới
+          {id ? "Update" : "Add"} sản phẩm
         </h2>
         <div className="block">
           <label htmlFor="">Title</label>
@@ -101,7 +105,7 @@ const ActionTodo = (setData) => {
             className="py-1 border-solid border font-medium border-slate-700 rounded-sm bg-sky-500 block w-3/4 text-center mx-auto"
             type="submit"
           >
-            thêm
+            {id ? "update" : "add"}
           </button>
         </div>
       </form>
